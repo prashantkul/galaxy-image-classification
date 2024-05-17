@@ -1,6 +1,7 @@
 # Galaxy Image classification using CNN
 This repository contains the code developed for my Machine Learning course at University of Chicago.
 
+## Dataset
 The dataset was made available via Kaggle (https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data)
 
 The Colab notebook contains implementation of Focal loss algorithm, based on the paper "Focal Loss for Dense Object Detection" by Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. 
