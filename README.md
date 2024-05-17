@@ -1,6 +1,12 @@
 # Galaxy Image classification using CNN
 This repository contains the code developed for my Machine Learning course at University of Chicago. 
 
+##Notebook
+
+<a target="_blank" href="https://colab.research.google.com/github/prashantkul/galaxy-image-classification/blob/main/MLPA_Project_Final.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 ## Dataset
 The dataset was made available via Kaggle (https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data). The dataset is produced by SDSS abd labeled via Galaxy Zoo. There are 61,578 labeled training images and 80,000 unlabeled test images.
 
