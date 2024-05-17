@@ -10,7 +10,7 @@ This repository contains the code developed for my Machine Learning course at Un
 ## CNN model
 Convolutions are a restriction of - and a specialization of - dense linear layers. A convolution of an image produces another image, and each output pixel is a function of only it's local neighborhood of points. This is called an inductive bias and is a big reason why convolutions work for image data: neighboring pixels are correlated and you can operate on just those pixels at a time.
 
-See examples of convolutions <a target="_blank" href=https://github.com/vdumoulin/conv_arithmetic alt=here />
+See examples of convolutions <a target="_blank" href=https://github.com/vdumoulin/conv_arithmetic alt=here </a>
 
 ## Dataset
 The dataset was made available via Kaggle (https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data). The dataset is produced by SDSS abd labeled via Galaxy Zoo. There are 61,578 labeled training images and 80,000 unlabeled test images.
