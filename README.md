@@ -1,10 +1,22 @@
 # Galaxy Image classification using CNN
-This repository contains the code developed for my Machine Learning course at University of Chicago.
+This repository contains the code developed for my Machine Learning course at University of Chicago. 
 
 ## Dataset
-The dataset was made available via Kaggle (https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data)
+The dataset was made available via Kaggle (https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data). The dataset is produced by SDSS abd labeled via Galaxy Zoo. There are 61,578 labeled training images and 80,000 unlabeled test images.
 
-The Colab notebook contains implementation of Focal loss algorithm, based on the paper "Focal Loss for Dense Object Detection" by Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. 
+## Architecture
+The model was developed using ResNet34 architecture (no transfer learning) + some normalization and dropout layers. 
+
+## Development
+The code was developed on Google Colab (https://colab.research.google.com/)
+
+## Training
+The model was trainined on two Nvidia V100 GPUs on a Google Cloud Colab GCE VM using MirroredStratgy. Images were made available on the GCE VM to reduce the data loading time. 
+
+## Accuracy
+The model achieved  78.38% train, 79.03% validation and 78.32% test accuracy
+
+Note: The Colab notebook contains implementation of Focal loss algorithm, based on the paper "Focal Loss for Dense Object Detection" by Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár.
 
 ## Focal Loss
 Focal loss is designed to address the problem of class imbalance where the number of examples in one class significantly outnumbers the examples in other classes. In such cases, standard cross-entropy loss can cause the model to predominantly focus on the majority class, leading to poor model performance on the minority class. Focal loss modifies the cross-entropy loss to down-weight the loss assigned to well-classified examples, allowing the model to focus more on hard-to-classify instances which are generally few and more informative.
