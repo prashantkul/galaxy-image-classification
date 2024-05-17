@@ -1,7 +1,7 @@
 # Galaxy Image classification using CNN
 This repository contains the code developed for my Machine Learning course at University of Chicago. 
 
-##Notebook
+## Notebook
 
 <a target="_blank" href="https://colab.research.google.com/github/prashantkul/galaxy-image-classification/blob/main/MLPA_Project_Final.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
