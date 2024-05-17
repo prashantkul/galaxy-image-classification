@@ -16,31 +16,10 @@ Epsilon Handling:
 
 **epsilon** is a small number added to predictions and subtracted from one minus predictions to ensure numerical stability of the log function in subsequent calculations.
 
-\documentclass{article}
-\usepackage{amsmath}
-
-\begin{document}
-
-The focal loss formula is defined as follows:
-
-\begin{equation}
-FL(p_t) = -\alpha_t (1 - p_t)^\gamma \log(p_t)
-\end{equation}
-
-where:
-\begin{itemize}
-  \item $p_t$ is the model's estimated probability for the class with label $y=1$.
-  \item $\alpha_t$ is a balancing factor which adjusts the emphasis on different classes.
-  \item $\gamma$ is a focusing parameter that smoothly adjusts the rate at which easy examples are down-weighted.
-  \item $FL(p_t)$ is the focal loss for a single example.
-\end{itemize}
-
-\end{document}
-
-Prediction Clipping:
+### Prediction Clipping:
 `y_pred = tf.clip_by_value(y_pred, epsilon, 1. - epsilon)` ensures that predictions are within the range [epsilon, 1-epsilon] to avoid taking the logarithm of zero.
 
-Class Weights Calculation:
+### Class Weights Calculation:
 
 alpha_t adjusts the alpha values based on the true labels (y_true). If the true label is 1 (positive class), alpha_t is set to alpha. If the true label is 0 (negative class), alpha_t is set to 1 - alpha.
 Modified Probability:
@@ -48,7 +27,11 @@ Modified Probability:
 p_t calculates an adjusted probability for each class, based on the true labels. For the true class, it uses the predicted probability (y_pred), and for the false class, it uses 1 - y_pred.
 Loss Calculation:
 
-The loss for each example is calculated as - alpha_t * tf.keras.backend.pow((tf.keras.backend.ones_like(y_true) - p_t), gamma) * tf.keras.backend.log(p_t). This formula applies a modulating factor (1 - p_t)^gamma to the cross-entropy loss to focus learning more on difficult examples.
+The loss for each example is calculated as - 
+
+`alpha_t * tf.keras.backend.pow((tf.keras.backend.ones_like(y_true) - p_t), gamma) * tf.keras.backend.log(p_t)`. 
+
+This formula applies a modulating factor (1 - p_t)^gamma to the cross-entropy loss to focus learning more on difficult examples.
 tf.keras.backend.mean(fl) then takes the mean of these losses over all examples to compute the final loss value to optimize.
 
 
