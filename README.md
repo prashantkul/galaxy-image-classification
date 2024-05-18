@@ -28,6 +28,11 @@ The model was trainined on two Nvidia V100 GPUs on a Google Cloud Colab GCE VM u
 ## Accuracy
 The model achieved  78.38% train, 79.03% validation and 78.32% test accuracy
 
+## Classification flow
+
+https://github.com/prashantkul/galaxy-image-classification/blob/main/jsoncrack.com.png
+
+
 Note: The Colab notebook contains implementation of Focal loss algorithm, based on the paper "Focal Loss for Dense Object Detection" by Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár.
 
 ## Focal Loss
